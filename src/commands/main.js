@@ -1,57 +1,33 @@
 const os = require('os')
-const {runtime} = require("../untils/functions");
-const { uptime } = require('process');
-const { text } = require('stream/consumers');
-module.export =[
-{
-    name:"alive",
-    description:"alive command",
-    react:"👾",
-    owneronly:false,
-    grouponly:false,
-    adminonly:false,
-    botadmin:false,
-    async execute(conn,mek,args,contex){
-        const{from,pushname,reply,quoted} = context;
-        try{
-            let desc = `
-HEY ${pushname} IM ALIVE NOW♻
-uptime:${runtime(process.uptime())}
-`
-await conn.sendmessage(FormDataEvent,
+const {runtime} = require("../utils/functions")
+module.exports = [
     {
-        image:{url:""},
-        captin: desc
+        name:"alive",
+        description:"alive command",
+        react:"👾",
+        ownerOnly: false,
+        groupOnly: false,
+        adminOnly: false,
+        botAdmin: false,
+        async execute(conn,mek,args,context){
+            const {from,pushname,reply,quoted} = context;
+            try{
+                let desc = `
+HEY ${pushname} I am alive now
+uptime:${runtime(process.uptime())}
+`  
+await conn.sendMessage(from,
+    {
+        immage:{url:""},
+        caption: desc
     },{
-        quoted:mek
+        quoted:mek 
     }
-)
+)              
 
-        }catch(e){
-            console.log(e)
+            }catch(e){
+                console.log(e)
+            }
         }
     }
-},
-{
-    name:"ping ",
-    description:"ping command",
-    react:"🤖",
-    owneronly:false,
-    grouponly:false,
-    adminonly:false,
-    botadmin:false,
-    async execute(conn,mek,args,contex){
-        const{from,pushname,reply,quoted} = context;
-        try{
-        let start = date.now();
-        await conn.sendMessage(from,{text:"pinging...."})
-        let end = date.now();
-        let pingtime = end-start;
-        reply(`pong✈\n${pingtime}ms...`)   
-
-        }catch(e){
-            console.log(e)
-        }
-    }
-}
 ]
