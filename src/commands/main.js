@@ -12,13 +12,12 @@ module.exports = [
         async execute(conn,mek,args,context){
             const {from,pushname,reply,quoted} = context;
             try{
-                let desc = `
+                let desc =`
 HEY ${pushname} I am alive now
-uptime:${runtime(process.uptime())}
-`  
+uptime:${runtime(process.uptime())}`  
 await conn.sendMessage(from,
     {
-        immage:{url:""},
+        immage:{url:"https://i.ibb.co/WNw4s8dY/Flux-Dev-A-hyperdetailed-fantasy-poster-of-a-beautiful-young-w-3.jpg"},
         caption: desc
     },{
         quoted:mek 
