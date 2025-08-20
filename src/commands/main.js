@@ -32,7 +32,7 @@ await conn.sendMessage(from,
     },
     {
         name:"ping",
-        description:"ping command",
+        description:"alive command",
         react:"✨️",
         ownerOnly: false,
         groupOnly: false,
@@ -45,7 +45,7 @@ await conn.sendMessage(from,
                 await conn.sendMessage(from,{text:"pinging.."})
                 let end = Date.now();
                 let pingtime = end-start;
-                reply(`pong📍\n$(pingtime)ms...`)
+                reply(`pong📍\n${pingtime}ms...`)
 
             }catch(e){
                 console.log(e)
