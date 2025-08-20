@@ -29,5 +29,27 @@ await conn.sendMessage(from,
                 console.log(e)
             }
         }
+    },
+    {
+        name:"ping",
+        description:"ping command",
+        react:"✨️",
+        ownerOnly: false,
+        groupOnly: false,
+        adminOnly: false,
+        botAdmin: false,
+        async execute(conn,mek,args,context){
+            const {from,pushname,reply,quoted} = context;
+            try{
+                let start = Date.now();
+                await conn.sendMessage(from,{text:"pinging.."})
+                let end = Date.now();
+                let pingtime = end-start;
+                reply(`pong📍\n$(pingtime)ms...`)
+
+            }catch(e){
+                console.log(e)
+            }
+        }
     }
 ]
