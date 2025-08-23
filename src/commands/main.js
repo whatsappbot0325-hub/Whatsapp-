@@ -18,7 +18,7 @@ uptime:${runtime(process.uptime())}
 `  
 await conn.sendMessage(from,
     {
-        image:{url:"https://i.ibb.co/WNw4s8dY/Flux-Dev-A-hyperdetailed-fantasy-poster-of-a-beautiful-young-w-3.jpg"},
+        image:{url:"https://github.com/whatsappbot0325-hub/myImage/blob/main/Flux_Dev_A_vertical_split_poster_featuring_Naruto_Uzumaki_from_3.jpg"},
         caption: desc
     },{
         quoted:mek 
